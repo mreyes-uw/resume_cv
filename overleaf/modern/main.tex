@@ -1,0 +1,152 @@
+% =====================================================================
+%  Sara Reyes -- Modern CV
+%  Template: "modern"  |  Compile with pdfLaTeX on Overleaf
+%  Self-contained: only this file is needed.
+%  Change the accent colour on the \definecolor{accent} line below.
+% =====================================================================
+\documentclass[10pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{sourcesanspro}   % clean sans-serif font
+\usepackage[left=0.75in,right=0.75in,top=0.6in,bottom=0.7in]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{1F5F8B}   % deep blue
+\definecolor{muted}{HTML}{5A5A5A}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% ---- Section heading: coloured caps + thin coloured rule ----
+\titleformat{\section}{\color{accent}\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{-6pt}{\color{accent}\rule{\linewidth}{0.8pt}}]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=1pt, parsep=0pt, label={\color{accent}\textbullet}}
+
+% \job{Role}{Dates}{Organisation}{Location}
+\newcommand{\job}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & \textcolor{muted}{#2}\\
+    \textcolor{accent}{#3} & \textcolor{muted}{\small #4}
+  \end{tabularx}\par}
+\newcommand{\me}[1]{\textbf{#1}}
+
+\begin{document}
+
+% ============================ HEADER ============================
+{\fontsize{26}{30}\selectfont\bfseries\color{accent} Sara Reyes}\\[2pt]
+{\large\color{muted} Ph.D. Student \textbullet\ Backscatter Communication \& RFID}\\[6pt]
+{\small
+\faEnvelope\ \href{mailto:reyess4@uw.edu}{reyess4@uw.edu}\hspace{1.4em}
+\faPhone\ 206-250-6131\hspace{1.4em}
+\faMapMarker*\ Seattle, WA\hspace{1.4em}
+\faUniversity\ University of Washington}
+
+% ============================ SUMMARY ===========================
+\section{Profile}
+Electrical engineering Ph.D.\ student building low-cost, low-power wireless systems. My research turns
+the existing digital I/O pins of FPGAs into backscatter modulators so that ordinary Bluetooth
+chipsets can receive BLE packets, with no added components. Prior work spans wireless links for
+brain--computer interfaces, RF measurement automation, and antenna design.
+
+% ============================ EDUCATION =========================
+\section{Education}
+\job{Ph.D., Electrical Engineering}{Expected Jun 2027}{University of Washington}{Seattle, WA}
+\begin{itemize}
+  \item Focus: Backscatter Communication and RFID \quad\textbullet\quad Advisor: Prof.\ Matthew S.\ Reynolds
+\end{itemize}
+\vspace{4pt}
+\job{B.S., Electrical Engineering}{Jun 2023}{University of Washington}{Seattle, WA}
+\begin{itemize}
+  \item Focus: Communications \quad\textbullet\quad Ronald E.\ McNair Scholar \quad\textbullet\quad STARS Scholar
+\end{itemize}
+
+% ============================ EXPERIENCE ========================
+\section{Research Experience}
+\job{Graduate Researcher}{Sep 2023 -- Present}{Sensing, Computational \& Communication Group, UW ECE}{Mentor: Prof.\ M.\ S.\ Reynolds}
+\begin{itemize}
+  \item Enable UHF-band backscatter communication using only existing FPGA digital I/O pins, with no extra components.
+  \item Generate modulated square waves through FPGA pins in Verilog; mentor an undergraduate on FPGA implementation and data collection.
+\end{itemize}
+\vspace{4pt}
+\job{Undergraduate Researcher}{May 2019 -- Jun 2023}{UW ECE}{Mentor: Prof.\ M.\ S.\ Reynolds}
+\begin{itemize}
+  \item Built an automated Arduino/MATLAB RF measurement system for channel path loss and bandwidth, improving reliability of wireless neural recorders in dense multipath.
+  \item Designed a PIFA and tested RF tags for aerospace and military use; tags beat commercial products in 5 of 7 thermal tests.
+  \item Co-authored a paper in \textit{IEEE Transactions on Antennas and Propagation}.
+\end{itemize}
+\vspace{4pt}
+\job{REU Researcher}{Jun 2021 -- Aug 2021}{Center for Neurotechnology, UW}{Seattle, WA}
+\begin{itemize}
+  \item Measured wireless neural recorder channels with a VNA at the Washington National Primate Research Center and presented at a university-wide symposium.
+\end{itemize}
+\vspace{4pt}
+\job{Undergraduate Researcher}{Apr 2019 -- Oct 2019}{Earth \& Space Sciences, UW}{Mentor: Michael McCarthy}
+\begin{itemize}
+  \item Built a rocket accelerometer interface and designed its PCB schematic in Eagle CAD.
+\end{itemize}
+
+\section{Professional Experience}
+\job{Graduate Staff Assistant}{2024 -- Present}{Graduate Recruiting \& Admissions, UW ECE}{Seattle, WA}
+\begin{itemize}
+  \item Coordinate M.S.\ and Ph.D.\ admissions with the Graduate Program Coordinator and Advisor; recruit and train the admissions Triage Committee and manage reviewer assignments.
+  \item Represent UW ECE at NSBE, SHPE, and SWE national conferences and local recruiting events; follow up with prospective students.
+  \item Run Virtual Office Hours (AMA sessions with Ph.D.\ students and faculty) and the Graduate Applicant Support Program, which matches applicants with volunteer mentors.
+  \item Draft the annual recruitment budget; plan graduate community events and manage their promotion and social media.
+  \item Provide peer mentorship that connects graduate students with departmental resources.
+\end{itemize}
+\vspace{4pt}
+\job{Platform Engineering Intern}{Summer 2025}{Impinj}{Seattle, WA}
+\begin{itemize}
+  \item Built an experimental setup and Python localization tools for 3D localization of RAIN RFID tags from a handheld reader.
+\end{itemize}
+\vspace{4pt}
+\job{Teaching Assistant, Intro to Signal Conditioning}{Jan 2024 -- Mar 2024}{UW ECE}{Seattle, WA}
+\begin{itemize}
+  \item Led labs on benchtop instruments and held office hours and problem sessions.
+\end{itemize}
+\vspace{4pt}
+\job{Telecommunications Summer Intern}{Jun 2022 -- Aug 2022}{Hargis Engineers Inc.}{Seattle, WA}
+\begin{itemize}
+  \item Produced the initial telecom design for a 23-floor high-rise in AutoCAD, including port placement and IDF/MDF layouts.
+\end{itemize}
+
+% ============================ PUBLICATIONS ======================
+\section{Publications}
+\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, label={\color{accent}\arabic*.}]
+  \item K.\,J.\ Ho, \me{S.\,M.\ Reyes Lopez}, M.\,S.\ Reynolds, ``Simultaneous Doppler Velocimetry and Backscatter Communication with a Low-Cost X-Band Radar Module,'' \textit{IEEE SENSORS}, 2025.
+  \item J.\,D.\ Rosenthal, \me{S.\,M.\ Reyes}, M.\,S.\ Reynolds, ``An All-Digital, Fully Synthesizable Wireless Analog Voltage Telemetry Sensor Tag Using ZeroScatter BLE Backscatter,'' \textit{IEEE RFID-TA}, 2025.
+  \item \me{S.\,M.\ Reyes}, C.\ Fong, J.\,D.\ Rosenthal, M.\,S.\ Reynolds, ``ZeroScatter BLE: All-Digital, Fully Synthesizable Bluetooth Low Energy (BLE) Backscatter Communication in Verilog RTL for FPGA-Based Devices,'' \textit{IEEE RFID}, 2024. \textbf{\color{accent}Best Poster Award.}
+  \item A.\ Oursland, O.\ Ianchenko, \me{S.\,M.\ Reyes}, R.\ Douglas, T.\,J.\ Moody, M.\ Lee, M.\,S.\ Reynolds, ``Automated Optimization of Electronic Mode Stirring for Enhanced Backscatter Link Margin in Reverberant Cavities,'' \textit{IEEE J.\ Radio Freq.\ Identif.}, vol.~8, 2024.
+  \item \me{S.\,M.\ Reyes}, A.\ Oursland, M.\ Lee, T.\,J.\ Moody, M.\,S.\ Reynolds, ``Dual-Polarized Electronic Mode Stirring for Improved Backscatter Communication Link Margin in a Reverberant Cavity Animal Cage Environment,'' \textit{IEEE RFID}, 2023.
+  \item J.\,D.\ Rosenthal, A.\ Pike, \me{S.\ Reyes}, M.\,S.\ Reynolds, ``Electronic Mode Stirring for Improved Backscatter Communication Link Margin in a Reverberant Cavity Animal Cage Environment,'' \textit{IEEE Trans.\ Antennas Propag.}, vol.~70, no.~1, 2022.
+\end{enumerate}
+
+% ============================ AWARDS & SKILLS ===================
+\section{Fellowships \& Awards}
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+  Leung Tsang Fellowship in Electromagnetics & \textcolor{muted}{2025}\\
+  CyberPOWDER Fellowship & \textcolor{muted}{2024 -- 2025}\\
+  Best Poster Award, IEEE RFID & \textcolor{muted}{2024}\\
+  Irene C.\ Peden ECE Fellowship & \textcolor{muted}{2023 -- 2024}\\
+\end{tabularx}
+
+\section{Leadership \& Outreach}
+\begin{itemize}
+  \item \textbf{AVELA} (2023 -- present): teach circuits and coding to middle school students and facilitators.
+  \item \textbf{WomXn at the Forefront of ECE Research} planning committee (2023 -- 2024); \textbf{UW ECE DEI Committee} (2023 -- 2024).
+  \item \textbf{Washington Hyperloop}, Controls \& Power Lead (2019 -- 2021): led 13 engineers building pod electronics for SpaceX Hyperloop Competition V.
+\end{itemize}
+
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  \textbf{Software} & Python, Verilog, MATLAB, Java, Ansys HFSS, Cadence Virtuoso, Altium, Eagle CAD, AutoCAD\\
+  \textbf{Hardware} & VNA, signal generators, FPGA, Arduino, circuit assembly, soldering\\
+\end{tabularx}
+
+\end{document}

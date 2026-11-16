@@ -1,0 +1,101 @@
+% =====================================================================
+%  Sara Reyes -- One-Page Resume
+%  Template: "onepage"  |  Compile with pdfLaTeX on Overleaf
+%  Self-contained: only this file is needed. Designed to fit one page;
+%  if you add content, trim elsewhere or reduce the \vspace values.
+% =====================================================================
+\documentclass[10pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=0.55in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\linespread{0.98}
+
+\titleformat{\section}{\bfseries\large}{}{0em}{\MakeUppercase}[\vspace{-7pt}\rule{\linewidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+\setlist[itemize]{leftmargin=1.1em, itemsep=0pt, topsep=0pt, parsep=0pt}
+
+% \entry{Left bold}{Right}{Left italic}{Right italic}
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & #2\\[-1pt]
+    \textit{#3} & \textit{#4}
+  \end{tabularx}\par}
+\newcommand{\me}[1]{\textbf{#1}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\bfseries Sara Reyes}\\[3pt]
+  \href{mailto:reyess4@uw.edu}{reyess4@uw.edu} \;|\; 206-250-6131 \;|\; Seattle, WA
+\end{center}
+\vspace{-4pt}
+
+\section{Education}
+\entry{University of Washington}{Expected Jun 2027}{Ph.D., Electrical Engineering \,--\, Backscatter Communication \& RFID}{Seattle, WA}
+\entry{University of Washington}{Jun 2023}{B.S., Electrical Engineering \,--\, Communications; McNair Scholar; STARS Scholar}{Seattle, WA}
+
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  \textbf{Software:} & Python, Verilog, MATLAB, Java, Ansys HFSS, Cadence Virtuoso, Altium, Eagle CAD, AutoCAD\\
+  \textbf{Hardware:} & Vector network analyzer, signal generator, FPGA, Arduino, circuit assembly, soldering\\
+\end{tabularx}
+
+\section{Experience}
+\entry{Graduate Researcher, UW ECE (Prof.\ Matthew S.\ Reynolds)}{Sep 2023 -- Present}{Zero-added-component backscatter using existing FPGA digital I/O pins}{Seattle, WA}
+\begin{itemize}
+  \item Enable UHF-band and BLE backscatter communication through FPGA digital pins in Verilog, with no added components.
+  \item Mentor an undergraduate researcher on FPGA implementation and data collection.
+\end{itemize}
+
+\entry{Graduate Staff Assistant, UW ECE}{2024 -- Present}{Graduate Recruiting \& Admissions}{Seattle, WA}
+\begin{itemize}
+  \item Coordinate M.S./Ph.D.\ admissions; recruit and train the Triage Committee and manage application review.
+  \item Represent UW ECE at NSBE, SHPE, and SWE national conferences; run Virtual Office Hours and the Graduate Applicant Support Program.
+  \item Draft the annual recruitment budget; plan graduate community events and manage outreach.
+\end{itemize}
+
+\entry{Platform Engineering Intern, Impinj}{Summer 2025}{3D localization of passive RAIN RFID tags}{Seattle, WA}
+\begin{itemize}
+  \item Built a handheld-reader test setup and Python localization tools using synthetic data.
+\end{itemize}
+
+\entry{Undergraduate Researcher, UW ECE (Prof.\ Matthew S.\ Reynolds)}{May 2019 -- Jun 2023}{Wireless biomedical devices and RF tags}{Seattle, WA}
+\begin{itemize}
+  \item Built an automated Arduino/MATLAB RF measurement system for channel path loss and bandwidth of wireless neural recorders.
+  \item Designed a PIFA for RF tags that beat commercial products in 5 of 7 thermal tests.
+\end{itemize}
+
+\entry{Telecommunications Intern, Hargis Engineers Inc.}{Jun 2022 -- Aug 2022}{AutoCAD telecom design}{Seattle, WA}
+\begin{itemize}
+  \item Produced the initial telecom design for a 23-floor high-rise, including IDF/MDF layouts.
+\end{itemize}
+
+\entry{Controls \& Power Lead, Washington Hyperloop}{Oct 2019 -- Apr 2021}{SpaceX Hyperloop Competition V}{Seattle, WA}
+\begin{itemize}
+  \item Led 13 engineers on pod electronics; designed power and sensor PCBs.
+\end{itemize}
+
+\section{Selected Publications}
+\begin{itemize}
+  \item K.\,J.\ Ho, \me{S.\,M.\ Reyes Lopez}, M.\,S.\ Reynolds, ``Simultaneous Doppler Velocimetry and Backscatter Communication with a Low-Cost X-Band Radar Module,'' \textit{IEEE SENSORS}, 2025.
+  \item J.\,D.\ Rosenthal, \me{S.\,M.\ Reyes}, M.\,S.\ Reynolds, ``An All-Digital, Fully Synthesizable Wireless Analog Voltage Telemetry Sensor Tag Using ZeroScatter BLE Backscatter,'' \textit{IEEE RFID-TA}, 2025.
+  \item \me{S.\,M.\ Reyes}, C.\ Fong, J.\,D.\ Rosenthal, M.\,S.\ Reynolds, ``ZeroScatter BLE: All-Digital, Fully Synthesizable BLE Backscatter Communication in Verilog RTL for FPGA-Based Devices,'' \textit{IEEE RFID}, 2024.
+  \item \me{S.\,M.\ Reyes} et al., ``Dual-Polarized Electronic Mode Stirring for Improved Backscatter Communication Link Margin in a Reverberant Cavity Animal Cage Environment,'' \textit{IEEE RFID}, 2023.
+  \item J.\,D.\ Rosenthal, A.\ Pike, \me{S.\ Reyes}, M.\,S.\ Reynolds, ``Electronic Mode Stirring for Improved Backscatter Communication Link Margin in a Reverberant Cavity Animal Cage Environment,'' \textit{IEEE Trans.\ Antennas Propag.}, 2022.
+\end{itemize}
+
+\section{Awards \& Service}
+\begin{itemize}
+  \item Leung Tsang Fellowship in Electromagnetics (2025); CyberPOWDER Fellowship (2024--25); IEEE RFID Best Poster (2024); Irene C.\ Peden ECE Fellowship (2023--24).
+  \item Teaching Assistant, Intro to Signal Conditioning (2024); AVELA STEM outreach (2023--present); WomXn at the Forefront of ECE Research planning committee; UW ECE DEI Committee.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,256 @@
+% =====================================================================
+%  Sara Reyes -- Academic CV (long-form)
+%  Template: "academic"  |  Compile with pdfLaTeX on Overleaf
+%  Self-contained: only this file is needed.
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}              % classic serif body font
+\usepackage[margin=0.9in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\definecolor{rule}{gray}{0.35}
+
+% ---- Page style: name + page number in footer ----
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\small\textit{Sara Reyes -- Curriculum Vitae}}
+\fancyfoot[R]{\small Page \thepage\ of \pageref{LastPage}}
+
+% ---- Section style: small caps with a full-width rule ----
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[{\color{rule}\titlerule}]
+\titlespacing*{\section}{0pt}{12pt}{5pt}
+\titleformat{\subsection}{\normalsize\itshape}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{8pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.4em, itemsep=1pt, topsep=2pt, parsep=0pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{1.5em}
+
+% ---- Entry macros ----
+% \cventry{Title}{Dates}{Organisation}{Extra line (optional, may be empty)}
+\newcommand{\cventry}[4]{%
+  \textbf{#1}\hfill #2\\
+  #3\ifx&#4&\else\\ \textit{#4}\fi\par\vspace{2pt}}
+% Numbered publication list
+\newenvironment{publist}[1]{\begin{enumerate}[label={[#1\arabic*]}, leftmargin=2.6em, itemsep=4pt]}{\end{enumerate}}
+\newcommand{\me}[1]{\textbf{#1}}   % highlight your own name in author lists
+
+\begin{document}
+
+% ============================ HEADER ============================
+\begin{center}
+  {\LARGE\bfseries Sara Reyes}\\[4pt]
+  Ph.D. Student, Electrical \& Computer Engineering, University of Washington\\[2pt]
+  \href{mailto:reyess4@uw.edu}{reyess4@uw.edu} \quad$\cdot$\quad 206-250-6131 \quad$\cdot$\quad Seattle, WA
+\end{center}
+
+% ============================ EDUCATION =========================
+\section{Education}
+\cventry{Ph.D., Electrical Engineering}{Expected June 2027}
+        {University of Washington, Seattle, WA}{}
+\begin{itemize}
+  \item Focus: Backscatter Communication and RFID
+  \item Advisor: Prof.\ Matthew S.\ Reynolds
+\end{itemize}
+
+\cventry{B.S., Electrical Engineering}{June 2023}
+        {University of Washington, Seattle, WA}{}
+\begin{itemize}
+  \item Focus: Communications
+  \item Ronald E.\ McNair Scholar; STARS Scholar
+\end{itemize}
+
+% ============================ RESEARCH ==========================
+\section{Research Interests}
+Communication systems for brain--computer interfaces and backscatter communication. Current
+research uses the existing digital I/O pins of FPGAs as backscatter modulators: combined with a
+continuous-wave carrier, standard Bluetooth chipsets can receive the resulting BLE packets,
+enabling low-cost, low-power backscatter communication with no added components.
+
+\section{Research Experience}
+\cventry{Graduate Researcher}{Sep 2023 -- Present}
+        {Electrical \& Computer Engineering Department, University of Washington}
+        {Faculty Mentor: Prof.\ Matthew S.\ Reynolds}
+\begin{itemize}
+  \item Use existing digital I/O pins on FPGAs to enable UHF-band backscatter communication without additional components.
+  \item Generate modulated square waves through FPGA digital pins using Verilog.
+  \item Mentor an undergraduate student on implementing Verilog designs on FPGA and on project data collection.
+\end{itemize}
+
+\cventry{Undergraduate Researcher}{May 2019 -- Jun 2023}
+        {Electrical \& Computer Engineering Department, University of Washington}
+        {Faculty Mentor: Prof.\ Matthew S.\ Reynolds}
+\begin{itemize}
+  \item Assisted in developing next-generation ultra-low-power wireless biomedical devices.
+  \item Built an automated RF measurement system (Arduino, MATLAB) to characterize channel path loss and bandwidth, improving the reliability of wireless neural recorders in dense multipath environments.
+  \item Co-authored a paper in \textit{IEEE Transactions on Antennas and Propagation}.
+  \item Designed a PIFA and supported functional and thermal testing of RF tags for aerospace and military applications under strict size and budget constraints; tags outperformed commercial products in five of seven thermal tests.
+\end{itemize}
+
+\cventry{REU Researcher}{Jun 2021 -- Aug 2021}
+        {Center for Neurotechnology, University of Washington}{}
+\begin{itemize}
+  \item Characterized channel path loss and bandwidth of wireless neural recorders in dense multipath using MATLAB and a vector network analyzer (VNA).
+  \item Gathered VNA data at the Washington National Primate Research Center.
+  \item Defined research objectives with Prof.\ Matthew Reynolds and presented findings at a university-wide symposium.
+\end{itemize}
+
+\cventry{Undergraduate Researcher}{Apr 2019 -- Oct 2019}
+        {Earth \& Space Sciences Department, University of Washington}
+        {Faculty Mentor: Michael McCarthy}
+\begin{itemize}
+  \item Built an electrical interface to read a sounding rocket's accelerometer data.
+  \item Created and revised the accelerometer interface PCB schematic in Eagle CAD.
+\end{itemize}
+
+% ============================ PUBLICATIONS ======================
+\section{Publications}
+\subsection{Journal Articles}
+\begin{publist}{J}
+  \item A.\ Oursland, O.\ Ianchenko, \me{S.\,M.\ Reyes}, R.\ Douglas, T.\,J.\ Moody, M.\ Lee, and M.\,S.\ Reynolds,
+        ``Automated Optimization of Electronic Mode Stirring for Enhanced Backscatter Link Margin in Reverberant Cavities,''
+        \textit{IEEE Journal of Radio Frequency Identification}, vol.~8, pp.~217--225, 2024.
+        \href{https://doi.org/10.1109/JRFID.2024.3382687}{doi:10.1109/JRFID.2024.3382687}
+  \item J.\,D.\ Rosenthal, A.\ Pike, \me{S.\ Reyes}, and M.\,S.\ Reynolds,
+        ``Electronic Mode Stirring for Improved Backscatter Communication Link Margin in a Reverberant Cavity Animal Cage Environment,''
+        \textit{IEEE Transactions on Antennas and Propagation}, vol.~70, no.~1, pp.~621--630, 2022.
+        \href{https://doi.org/10.1109/TAP.2021.3102047}{doi:10.1109/TAP.2021.3102047}
+\end{publist}
+
+\subsection{Conference Papers}
+\begin{publist}{C}
+  \item K.\,J.\ Ho, \me{S.\,M.\ Reyes Lopez}, and M.\,S.\ Reynolds,
+        ``Simultaneous Doppler Velocimetry and Backscatter Communication with a Low-Cost X-Band Radar Module,''
+        in \textit{2025 IEEE SENSORS}, 2025, pp.~1--4.
+        \href{https://doi.org/10.1109/SENSORS59705.2025.11331138}{doi:10.1109/SENSORS59705.2025.11331138}
+  \item J.\,D.\ Rosenthal, \me{S.\,M.\ Reyes}, and M.\,S.\ Reynolds,
+        ``An All-Digital, Fully Synthesizable Wireless Analog Voltage Telemetry Sensor Tag Using ZeroScatter Bluetooth Low Energy (BLE) Backscatter,''
+        in \textit{2025 IEEE International Conference on RFID Technology and Applications (RFID-TA)}, 2025, pp.~1--4.
+        \href{https://doi.org/10.1109/RFID-TA63091.2025.11265892}{doi:10.1109/RFID-TA63091.2025.11265892}
+  \item \me{S.\,M.\ Reyes}, C.\ Fong, J.\,D.\ Rosenthal, and M.\,S.\ Reynolds,
+        ``ZeroScatter BLE: All-Digital, Fully Synthesizable Bluetooth Low Energy (BLE) Backscatter Communication in Verilog RTL for FPGA-Based Devices,''
+        in \textit{2024 IEEE International Conference on RFID (RFID)}, 2024, pp.~7--10.
+        \href{https://doi.org/10.1109/RFID62091.2024.10582510}{doi:10.1109/RFID62091.2024.10582510}
+  \item \me{S.\,M.\ Reyes}, A.\ Oursland, M.\ Lee, T.\,J.\ Moody, and M.\,S.\ Reynolds,
+        ``Dual-Polarized Electronic Mode Stirring for Improved Backscatter Communication Link Margin in a Reverberant Cavity Animal Cage Environment,''
+        in \textit{2023 IEEE International Conference on RFID (RFID)}, 2023, pp.~25--29.
+        \href{https://doi.org/10.1109/RFID58307.2023.10178597}{doi:10.1109/RFID58307.2023.10178597}
+\end{publist}
+
+% ============================ PRESENTATIONS =====================
+\section{Presentations}
+\begin{publist}{P}
+  \item \me{S.\,M.\ Reyes}, A.\ Oursland, M.\ Lee, T.\,J.\ Moody, and M.\,S.\ Reynolds,
+        ``Dual-Polarized Electronic Mode Stirring for Improved Backscatter Communication Link Margin in a Reverberant Cavity Animal Cage Environment,''
+        technical session, 2023 IEEE International Conference on RFID, Seattle, WA, Jun.\ 2023.
+  \item \me{S.\ Reyes}, J.\,D.\ Rosenthal, and M.\,S.\ Reynolds,
+        ``Electronic Mode Stirring Improves Wireless Communications in an Animal Cage Environment,''
+        poster, National Diversity in STEM Conference, San Juan, Puerto Rico, Oct.\ 2022.
+  \item \me{S.\ Reyes}, J.\,D.\ Rosenthal, and M.\,S.\ Reynolds,
+        ``Electronic Mode Stirring Improves Wireless Communications in an Animal Cage Environment,''
+        poster, Gabriel E.\ Gallardo Symposium, University of Washington, Apr.\ 2022.
+  \item \me{S.\ Reyes}, J.\,D.\ Rosenthal, and M.\,S.\ Reynolds,
+        ``Electronic Mode Stirring Improves Wireless Communications in an Animal Cage Environment,''
+        poster, ECE Research Showcase, University of Washington, Mar.\ 2022.
+  \item \me{S.\ Reyes},
+        ``Electronic Mode Stirring Improves Wireless Communications in an Animal Cage Environment,''
+        poster, WomXn at the Forefront of ECE Research, University of Washington, Nov.\ 2021.
+  \item \me{S.\ Reyes},
+        ``Electronic Mode Stirring Improves Wireless Communications in an Animal Cage Environment,''
+        poster, Center for Neurotechnology, University of Washington, Aug.\ 2021.
+  \item \me{S.\ Reyes}, J.\,D.\ Rosenthal, A.\ Pike, and M.\,S.\ Reynolds,
+        ``Electronic Mode Stirring for Improved Backscatter Communication Link Margin in Reverberant Cavity Animal Cage Environments,''
+        poster, IEEE International Conference on RFID (virtual), Sep.\ 2020.
+\end{publist}
+
+% ============================ AWARDS ============================
+\section{Fellowships \& Awards}
+\begin{tabular}{@{}p{0.78\textwidth}@{}r@{}}
+  Leung Tsang Fellowship in Electromagnetics & 2025 \\
+  CyberPOWDER Fellowship & 2024 -- 2025 \\
+  Best Poster Award, IEEE RFID 2024 & 2024 \\
+  Irene C.\ Peden ECE Fellowship & 2023 -- 2024 \\
+  Ronald E.\ McNair Scholar & \\
+  STARS Scholar & \\
+\end{tabular}
+
+% ============================ EMPLOYMENT ========================
+\section{Professional \& Departmental Experience}
+\cventry{Graduate Staff Assistant}{2024 -- Present}
+        {Graduate Recruiting \& Admissions, Electrical \& Computer Engineering, University of Washington}{}
+\begin{itemize}
+  \item Coordinate M.S.\ and Ph.D.\ admissions with the faculty Graduate Program Coordinator and Graduate Program Advisor.
+  \item Recruit and train the graduate admissions Triage Committee, assign reviewers to applications, and keep the review process on schedule.
+  \item Represent UW ECE at national affinity-group conferences (NSBE, SHPE, SWE) and at local recruiting events, and follow up with prospective students.
+  \item Run two applicant-support initiatives: Virtual Office Hours (AMA-style sessions with Ph.D.\ students and faculty) and the Graduate Applicant Support Program (GASP), which pairs applicants with volunteer graduate mentors for application feedback.
+  \item Draft the annual admissions and recruitment budget and partner with the ECE communications team to promote recruiting events.
+  \item Plan graduate community events with the ECE Events Team, manage event promotion and social media outreach, and use student feedback to improve programming.
+  \item Provide peer mentorship that connects graduate students with departmental resources and opportunities; support information sessions, Graduate Visit Days, and orientation.
+\end{itemize}
+
+\cventry{Platform Engineering Intern}{Summer 2025}
+        {Impinj, Seattle, WA}{}
+\begin{itemize}
+  \item Built an experimental setup for 3D localization of passive RAIN RFID tags with a handheld reader.
+  \item Wrote Python tools for theoretical tag localization using synthetic data.
+\end{itemize}
+
+\cventry{Telecommunications Summer Intern}{Jun 2022 -- Aug 2022}
+        {Hargis Engineers Inc., Seattle, WA}{}
+\begin{itemize}
+  \item Created CAD models of telecommunications systems for high-rise buildings in AutoCAD.
+  \item Produced the initial telecommunications design for all 23 floors of a building, including port placement and IDF/MDF layouts.
+  \item Worked across engineering disciplines to translate client needs into updated schematics.
+\end{itemize}
+
+% ============================ TEACHING ==========================
+\section{Teaching}
+\cventry{Teaching Assistant, Introduction to Signal Conditioning}{Jan 2024 -- Mar 2024}
+        {Electrical \& Computer Engineering, University of Washington}{}
+\begin{itemize}
+  \item Led lab sessions using oscilloscopes, power supplies, multimeters, and function generators.
+  \item Held office hours and problem sessions.
+\end{itemize}
+
+% ============================ LEADERSHIP ========================
+\section{Leadership \& Service}
+\cventry{Planning Committee, WomXn at the Forefront of ECE Research}{Aug 2023 -- Mar 2024}
+        {University of Washington}{}
+\begin{itemize}
+  \item Recruited keynote speakers and industry panelists and helped select panel topics.
+\end{itemize}
+
+\cventry{DEI Committee, Electrical \& Computer Engineering}{Sep 2023 -- Jun 2024}
+        {University of Washington}{}
+\begin{itemize}
+  \item Promoted equitable access to education and resources in ECE through initiatives such as the DEI Small Grants Program.
+\end{itemize}
+
+\cventry{A Vision for Electronic Literacy \& Access (AVELA)}{Apr 2023 -- Present}{Seattle, WA}{}
+\begin{itemize}
+  \item Taught middle school students basic circuit design and breadboarding at the William Grose Center.
+  \item Trained class facilitators on coding curriculum for the Denny International Middle School coding club.
+\end{itemize}
+
+\cventry{Controls \& Power Lead, Washington Hyperloop}{Oct 2019 -- Apr 2021}{University of Washington}{}
+\begin{itemize}
+  \item Led a team of 13 engineers developing electronics and software for a pod in SpaceX's Hyperloop Competition V.
+  \item Implemented power supplies for a linear induction motor, hydraulic pumps, and sensors; designed and assembled power and sensor PCBs.
+  \item Presented Washington Hyperloop and STEM careers to middle and high school students (TAF at Saghalie, 2021).
+\end{itemize}
+
+% ============================ SKILLS ============================
+\section{Technical Skills}
+\textbf{Software:} Python, Verilog, MATLAB, Java, Ansys HFSS, Cadence Virtuoso, Altium, Eagle CAD, AutoCAD\\
+\textbf{Hardware:} Vector network analyzers, signal generators, FPGAs, Arduino, circuit assembly, soldering
+
+\end{document}
